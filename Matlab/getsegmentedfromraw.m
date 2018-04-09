@@ -291,8 +291,6 @@ for i = 1:length(files)
     clear filestruct
     clear output_struct
 end
-subject = cellstr(cell2mat(subject));
-% save([subjID,'_toclassify.mat'],'feats','legphase','trig','subject','featlabels');
 close all
 end
 

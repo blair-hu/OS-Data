@@ -1,10 +1,9 @@
 function [feats] = getTDfeats(DataSet)
-frameLen = size(DataSet,1);
 DEADZONE = 0.025;
 
-Ntotal = size(DataSet,1);
+frameLen = size(DataSet,1);
 Nsig = size(DataSet,2);
-DataSet = DataSet - ones(Ntotal,1)*mean(DataSet);
+DataSet = DataSet - ones(frameLen,1)*mean(DataSet);
 
 feats = zeros(4,Nsig);
 
@@ -49,5 +48,10 @@ for SigNum = 1:Nsig
         % Compute Waveform Length
         len = len + abs(fst-mid);
     end
+    
+    len = len/frameLen;
+    turns = turns/frameLen;
+    zero_count = zero_count/frameLen;
+    
     feats(:,SigNum) = [mav len turns zero_count]';
 end

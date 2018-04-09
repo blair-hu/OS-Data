@@ -33,6 +33,6 @@ for i = 1:10
        mvc_save(1:mvc_length(j),j) = mvc_data_save{j}; 
     end
     T_MVC = array2table(mvc_save,'VariableNames',header);
-    writetable(T_MVC,[subjID{i},'_MVC.csv','Delimiter',',']
+    writetable(T_MVC,[subjID{i},'_MVC_trunc.csv','Delimiter',',']
 end
 save('AllSubjMVC.mat','subjMVC_max');
