@@ -9,17 +9,17 @@ Project code associated with Hu et al. '18 [paper](https://doi.org/10.3389/frobt
 The program is written in MATLAB (Mathworks). The code is known to run on R2014a, but should also be compatible with other versions. The data should be processed sequentially in the following order: 
 
 1. Run **getsegmentedfromraw.m** on raw data (direct output from our CAPS data acquisition software), using the experimental annotation notes and visual inspection to exclude errant gait events, to save **resegmented.m** versions of each file.
-2. Run **getfeatsfromsegmented.m** on **resegmented.m** files from all subjects to save:
--raw and processed data for each circuit as CSV files (**raw.csv** and **post.csv**)
--EMG signal-to-noise metadata (**checkEMG.mat**)
--goniometer statistical metadata (**checkGONIO.mat**)
--level ground walking EMG and kinematic data from averaged strides for comparison to reference data (**all_LW_EMG.mat** and **all_LW_GONIO.mat**)
+2. Run **getfeatsfromsegmented.m** on **resegmented.m** files from all subjects to save:<br/>
+-raw and processed data for each circuit as CSV files (**raw.csv** and **post.csv**)<br/>
+-EMG signal-to-noise metadata (**checkEMG.mat**)<br/>
+-goniometer statistical metadata (**checkGONIO.mat**)<br/>
+-level ground walking EMG and kinematic data from averaged strides for comparison to reference data (**all_LW_EMG.mat** and **all_LW_GONIO.mat**)<br/>
 -aggregated features with varying time delays of 0, 30, 60, 90, and 120 ms (**AllSubs_feats_reprocessed.mat**)
 
 For more details about the dataset, please see the following reference:
 
     @Article{
-        Title                    = {A recurrent neural model of proto-object based contour integration and figure-ground segregation},
+        Title                    = {Benchmark Datasets for Bilateral Lower-Limb Neuromechanical Signals from Wearable Sensors during Unassisted Locomotion in Able-Bodied Individuals},
         Author                   = {Hu, Blair, Rouse, Elliott, and Hargrove, Levi},
         Journal                  = {Frontiers in Robotics and AI},
         Year                     = {2018},
