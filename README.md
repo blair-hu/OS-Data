@@ -6,12 +6,19 @@ Project code associated with Hu et al. '18 [paper](https://doi.org/10.3389/frobt
 </p>
 
 ### Introduction
+The program is written in MATLAB (Mathworks). The code is known to run on R2014a, but should also be compatible with other versions. The data should be processed sequentially in the following order: 
 
-The program is written in MATLAB (Mathworks). The code is known to run on R2014a, but should also be compatible with other versions. The main program function is **demo.m**. Running the provided code will generate the 
+1. Run **getsegmentedfromraw.m** on raw data (direct output from our CAPS data acquisition software), using the experimental annotation notes and visual inspection to exclude errant gait events, to save **resegmented.m** versions of each file.
+2. Run **getfeatsfromsegmented.m** on **resegmented.m** files from all subjects to save:
+-raw and processed data for each circuit as CSV files (**raw.csv** and **post.csv**)
+-EMG signal-to-noise metadata (**checkEMG.mat**)
+-goniometer statistical metadata (**checkGONIO.mat**)
+-level ground walking EMG and kinematic data from averaged strides for comparison to reference data (**all_LW_EMG.mat** and **all_LW_GONIO.mat**)
+-aggregated features with varying time delays of 0, 30, 60, 90, and 120 ms (**AllSubs_feats_reprocessed.mat**)
 
-Running this program will simulate the model network's response to different input stimuli, corresponding to the contour integration experiments (Chen et al., 2014) and the border-ownership experiments (Qiu et al., 2007). Please be patient as these simulations may take some time. Please also note that our final results are based on averages over multiple simulations, while the demo here just shows results from a single simulation. To reproduce a subset of the figures shown in the paper using the actual data from our simulations, run **plot_figs.m**. For more details about the model and/or experiments, please see the following references:
+For more details about the dataset, please see the following reference:
 
-    @Article{Hu_Niebur17,
+    @Article{
         Title                    = {A recurrent neural model of proto-object based contour integration and figure-ground segregation},
         Author                   = {Hu, Blair, Rouse, Elliott, and Hargrove, Levi},
         Journal                  = {Frontiers in Robotics and AI},
