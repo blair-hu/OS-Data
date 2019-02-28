@@ -1,5 +1,5 @@
 # Open access human movement data for improving lower-limb wearable robotics
-Project code associated with Hu et al. '18 paper on the ENcycopedia of Able-bodied Lower Limb Locomotor Signals (ENABL3S) dataset. 
+Project code associated with Hu et al. '18 [paper](https://doi.org/10.3389/frobt.2018.00014) on the ENcycopedia of Able-bodied Lower Limb Locomotor Signals (ENABL3S) [dataset](https://doi.org/10.6084/m9.figshare.5362627). 
 
 <p align="center">
   <img style="float: center;" src="http://blair-hu.github.io/img/OpenSourceDataset1.jpg" width="800">
